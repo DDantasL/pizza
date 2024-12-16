@@ -11,6 +11,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  padding: 10px;
 }
 
 .container {
@@ -18,31 +19,38 @@ body {
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 300px;
+  width: 100%;
+  max-width: 600px;  /* Ajustando a largura máxima para telas grandes */
 }
 
 h1 {
   text-align: center;
   margin-bottom: 20px;
+  font-size: 1.8em;
 }
 
 .user-form {
   display: flex;
   justify-content: space-between;
+  gap: 10px;
 }
 
 #userName {
-  width: 70%;
-  padding: 5px;
+  width: 80%;
+  padding: 10px;
+  font-size: 1em;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
 button {
-  padding: 5px 10px;
+  padding: 10px 15px;
   background-color: #4CAF50;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 1.4rem;
 }
 
 button:hover {
@@ -63,18 +71,25 @@ button:hover {
   margin-bottom: 10px;
 }
 
+.user-item span {
+  flex: 1;
+  text-align: left;
+  font-size: 1.2em;
+}
+
 .counter-btns {
   display: flex;
   align-items: center;
+  gap: 10px;
 }
 
 .counter-btns button {
   padding: 5px 10px;
-  margin: 0 5px;
   background-color: #2196F3;
   color: white;
   border: none;
   border-radius: 5px;
+  font-size: 1em;
 }
 
 .counter-btns button:hover {
@@ -87,4 +102,78 @@ button:hover {
 
 .delete-btn:hover {
   background-color: #e53935;
+}
+
+button, .delete-btn {
+  font-size: 1em;
+  padding: 8px;
+  margin-left: 10px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+    max-width: 90%;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  button, .delete-btn {
+    font-size: 0.9em;
+    padding: 8px;
+  }
+
+  #userName {
+    padding: 8px;
+    font-size: 0.9em;
+  }
+
+  .user-item {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .counter-btns {
+    justify-content: center;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 1.2em;
+  }
+
+  button, .delete-btn {
+    font-size: 0.8em;
+    padding: 6px;
+  }
+
+  #userName {
+    padding: 6px;
+    font-size: 0.8em;
+  }
+
+  .user-item {
+    flex-direction: row;  /* Forçando a linha para a versão mobile */
+    gap: 15px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .counter-btns {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .delete-btn, button {
+    width: auto;
+  }
 }
